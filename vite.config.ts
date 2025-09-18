@@ -4,6 +4,9 @@
   import path from 'path';
 
   export default defineConfig({
+    // Base path for GitHub Pages project site: https://rudh1r.github.io/Soulace/
+    // Adjust if using a custom domain.
+    base: '/Soulace/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
