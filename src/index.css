@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS variables for the Soulace theme */
+:root {
+  --font-size: 16px;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card: #fff;
+  --card-foreground: #1e293b;
+  --popover: #fff;
+  --popover-foreground: #1e293b;
+  --primary: #3b82f6;
+  --primary-foreground: #fff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e0f2fe;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fff;
+  --border: #3b82f61a;
+  --input: transparent;
+  --input-background: #f8fafc;
+  --switch-background: #cbd5e1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
+  --radius: .75rem;
+  --sidebar: #fff;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #e0f2fe;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #3b82f61a;
+  --sidebar-ring: #3b82f6;
+  --soulace-primary: #3b82f6;
+  --soulace-secondary: #10b981;
+  --soulace-gradient: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+  --soulace-gradient-light: linear-gradient(135deg, #dbeafe 0%, #d1fae5 100%);
+  --soulace-blue-50: #eff6ff;
+  --soulace-blue-100: #dbeafe;
+  --soulace-blue-500: #3b82f6;
+  --soulace-blue-600: #2563eb;
+  --soulace-green-50: #f0fdf4;
+  --soulace-green-100: #dcfce7;
+  --soulace-green-500: #22c55e;
+  --soulace-green-600: #16a34a;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #60a5fa;
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
+  --border: #60a5fa33;
+  --input: #1e293b;
+  --ring: #60a5fa;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #60a5fa;
+  --chart-2: #34d399;
+  --chart-3: #fbbf24;
+  --chart-4: #f87171;
+  --chart-5: #a78bfa;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #60a5fa;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #60a5fa33;
+  --sidebar-ring: #60a5fa;
+  --soulace-primary: #60a5fa;
+  --soulace-secondary: #34d399;
+  --soulace-gradient: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+  --soulace-gradient-light: linear-gradient(135deg, #1e3a8a 0%, #064e3b 100%);
+  --soulace-blue-50: #1e3a8a;
+  --soulace-blue-100: #1e40af;
+  --soulace-blue-500: #60a5fa;
+  --soulace-blue-600: #3b82f6;
+  --soulace-green-50: #064e3b;
+  --soulace-green-100: #065f46;
+  --soulace-green-500: #34d399;
+  --soulace-green-600: #10b981;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+.soulace-gradient {
+  background: var(--soulace-gradient);
+}
+
+.soulace-gradient-light {
+  background: var(--soulace-gradient-light);
+}
+
+.soulace-text-gradient {
+  background: var(--soulace-gradient);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.soulace-border-gradient {
+  background-image: var(--soulace-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid #0000;
+}
+
+.soulace-shadow {
+  box-shadow: 0 10px 25px #3b82f626;
+}
+
+.soulace-shadow-green {
+  box-shadow: 0 10px 25px #10b98126;
+}
+
+/* Mobile optimizations */
+@media (width <= 768px) {
+  button {
+    min-height: 44px;
+  }
+
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  ::-webkit-scrollbar {
+    background: none;
+    width: 0;
+  }
+
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hover\:soulace-gradient:hover {
+    background: var(--soulace-gradient) !important;
+  }
+
+  .hover\:soulace-gradient-light:hover {
+    background: var(--soulace-gradient-light) !important;
+  }
+}
